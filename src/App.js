@@ -1,25 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+function Person(props){
+  return(
+    <div>
+      <p>{props.name}</p>
+      <p>{props.age}</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export function Button(props){
+  const click = ()  => alert("hello")
+  return(
+
+    <div>
+
+      <button onClick={click} >Click</button>
+
+    </div>
+  )
+}
+
+export function Header(props){
+  return(
+    <>
+    <p>{props.title}</p>
+    </>
+  )
+}
+// export function List1(props){
+//   return <li>{props.items}</li>
+// }
+export function List(props){
+  const list = ["apple  ","banana  ","mango"]
+  return(
+    <>
+    <p>{ list.map((e)=>e) }<br/> </p>
+    </>
+  )
+}
+
+export default Person;
